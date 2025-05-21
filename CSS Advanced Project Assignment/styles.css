@@ -1,0 +1,149 @@
+/* Algemene stijl variabelen */
+:root {
+  --su-main: hsl(324, 100%, 50%);
+  --su-second: hsl(60, 100%, 50%);
+  --su-black: hsl(60, 100%, 0%);
+  --su-white: hsl(60, 100%, 98%);
+  --footer-size: 0.75rem;
+ }
+
+body {
+  margin: 0;
+  background-color: var(--su-second);
+  background-image: url("images/SU-US.svg");
+  background-repeat: repeat;
+  background-size: 10%;
+  background-position: center;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+/* typo utility classes */
+.bold-text {
+  font-weight: bold;
+}
+
+/* Elements */
+
+header {
+  display: grid;
+  background-color: var(--su-black);
+  color: var(--su-white);
+  width: 100vw;
+  height: auto;
+  padding: 1.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+nav li:hover {
+  color: var(--su-main);
+}
+
+.main-content-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+  row-gap: 1rem;
+  grid-template-areas:
+    "main"
+    "tour"
+    "video"
+    "contact"
+    "footer";
+  width: 96vw;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.main-article {
+  display: grid;
+  grid-area: main;
+  background: var(--su-black);
+  color: var(--su-white);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tour-component {
+  display: grid;
+  grid-area: tour;
+  background: var(--su-white);
+  color: var(--su-black);
+  padding: 1em;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.promo-component {
+  display: grid;
+  grid-area: video;
+  background: var(--su-white);
+  color: var(--su-black);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  display: grid;
+  grid-area: contact;
+  background: var(--su-white);
+  color: var(--su-black);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  width: 100vw;
+  height: auto;
+  margin-top: 2rem;
+  font-size: var(--footer-size);
+}
+
+.footer-content {
+  background-color: var(--su-black);
+  text-align: center;
+  color: var(--su-white);
+  padding: 1.5em;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.band-img {
+  display: none;    
+  width: 100%;
+  height: auto;
+  padding: 1em 1em 0 1em;
+      background-color: var(--su-second);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ }
+
+@media screen and (min-width: 768px) {
+  .main-content-box {
+    grid-template-columns: 5fr 3fr;
+    grid-template-areas:
+      "main tour"
+      "main contact"
+      "main video"
+      "main band-img"
+  }
+
+  .band-img {
+    display: grid;
+    grid-area: band-img;
+  }
+}
